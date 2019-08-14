@@ -1,20 +1,23 @@
 <?xml version="1.0"?>
 <layout version="0.1.0">
-    <default>
-		<reference name="left">
-			 <block type="catsidebarnav/catsidebarnav" name="left.catsidebarnav" before="-">
-				<action method="leftSidebarBlock" />
-			 </block>
-		</reference>
-		<reference name="right">
-			 <block type="catsidebarnav/catsidebarnav" name="right.catsidebarnav" before="-">
-				<action method="rightSidebarBlock" />
-			 </block>
-		</reference>
-    </default>
-    <catsidebarnav_index_index>
-        <reference name="content">
-            <block type="catsidebarnav/catsidebarnav" name="catsidebarnav" template="catsidebarnav/catsidebarnav.phtml" />
-        </reference>
-    </catsidebarnav_index_index>
+  <default>
+    <reference name="head">
+      <action method="addJs" ifconfig="catsidebarnav/display_settings/include_jquery">
+        <script>magebuzz/catsidebarnav/jquery.min.js</script>
+      </action>
+      <action method="addJs" ifconfig="catsidebarnav/display_settings/include_jquery">
+        <script>magebuzz/catsidebarnav/jquery.noconflict.js</script>
+      </action>
+    </reference>
+    <reference name="left">
+       <block type="catsidebarnav/catsidebarnav" name="left.catsidebarnav" before="-">
+      <action method="leftSidebarBlock" />
+       </block>
+    </reference>
+    <reference name="right">
+       <block type="catsidebarnav/catsidebarnav" name="right.catsidebarnav" before="-">
+      <action method="rightSidebarBlock" />
+       </block>
+    </reference>
+  </default>
 </layout> 

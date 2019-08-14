@@ -1,12 +1,12 @@
 {
     "name": "OpenMageModuleFostering/magebuzz_category_sidebar_navigation",
     "type": "magento-module",
-    "license": "OSL-v3.0",
+    "license": "Open-Software-License",
     "homepage": "",
-    "description": "Allowing you to move the categories navigation to the left or right column",
+    "description": "Changing your website interface by moving the categories navigation to the left or right column.",
     "authors": [
     {
-        "name": "Magebuzz",
+        "name": "Neo Nguyen",
         "email": "magebuzz@gmail.com"
     }
 ],
