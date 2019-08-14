@@ -1,9 +1,9 @@
 {
     "name": "OpenMageModuleFostering/magebuzz_category_sidebar_navigation",
     "type": "magento-module",
-    "license": "GNU-General-Public-License",
+    "license": "OSL-v3.0",
     "homepage": "",
-    "description": "Category Sidebar Navigation is a simple solution for your Magento Store appearance which allows you to move the categories navigation to the left or right column.",
+    "description": "Allowing you to move the categories navigation to the left or right column",
     "authors": [
     {
         "name": "Magebuzz",

@@ -2,29 +2,26 @@
 <config>
     <modules>
         <Magebuzz_Catsidebarnav>
-            <version>0.1.0</version>
+            <version>0.1.1</version>
         </Magebuzz_Catsidebarnav>
     </modules>
     <frontend>
-		<secure_url>
-            <catsidebarnav>/catsidebarnav/</catsidebarnav>
-        </secure_url>	
-        <routers>
-            <catsidebarnav>
-                <use>standard</use>
-                <args>
-                    <module>Magebuzz_Catsidebarnav</module>
-                    <frontName>catsidebarnav</frontName>
-                </args>
-            </catsidebarnav>
-        </routers>
-        <layout>
-            <updates>
-                <catsidebarnav>
-                    <file>catsidebarnav.xml</file>
-                </catsidebarnav>
-            </updates>
-        </layout>
+		<routers>
+				<catsidebarnav>
+						<use>standard</use>
+						<args>
+								<module>Magebuzz_Catsidebarnav</module>
+								<frontName>catsidebarnav</frontName>
+						</args>
+				</catsidebarnav>
+		</routers>
+		<layout>
+				<updates>
+						<catsidebarnav>
+								<file>catsidebarnav.xml</file>
+						</catsidebarnav>
+				</updates>
+		</layout>
     </frontend>
     <admin>
         <routers>
@@ -38,13 +35,22 @@
         </routers>
     </admin>
     <adminhtml>
-		<layout>
-			<updates>
-				<catsidebarnav>
-					<file>catsidebarnav.xml</file>
-				</catsidebarnav>
-			</updates>
-		</layout>
+			<layout>
+				<updates>
+					<catsidebarnav>
+						<file>catsidebarnav.xml</file>
+					</catsidebarnav>
+				</updates>
+			</layout>
+			<translate>
+				<modules>
+					<Magebuzz_Catsidebarnav>
+						<files>
+							<default>Magebuzz_Catsidebarnav.csv</default>
+						</files>
+					</Magebuzz_Catsidebarnav>
+				</modules>
+			</translate>	
     </adminhtml>   
     <global>
         <models>
@@ -122,13 +128,4 @@
 			</display_settings>
 		</catsidebarnav>
 	</default>
-	<translate>
-		<modules>
-			<Magebuzz_Catsidebarnav>
-				<files>
-					<default>Magebuzz_Catsidebarnav.csv</default>
-				</files>
-			</Magebuzz_Catsidebarnav>
-		</modules>
-	</translate>	
 </config>

@@ -5,18 +5,36 @@ class Magebuzz_Catsidebarnav_Block_Sidebar extends Magebuzz_Catsidebarnav_Block_
 		$this->setTemplate('catsidebarnav/catsidebarnav.phtml');
 		return parent::_construct();
 	}
-	public function _prepareLayout()
-    {
+	public function _prepareLayout() {
+		$headBlock = $this->getLayout()->getBlock('head');
+		$headBlock->addJs('magebuzz/catsidebarnav/jquery.min.js');
+		$headBlock->addJs('magebuzz/catsidebarnav/jquery.noconflict.js');
+		$type = Mage::helper('catsidebarnav')->getShowType();
+		switch($type) {
+			case "static":
+				$headBlock->addCss('css/magebuzz/catsidebarnav/static.css');
+				break;
+			case "click-2-click":
+				$headBlock->addCss('css/magebuzz/catsidebarnav/click.css');
+				$headBlock->addItem('skin_js','js/magebuzz/catsidebarnav/click2click.js');
+				break;
+			case "fly-out":
+				$headBlock->addCss('css/magebuzz/catsidebarnav/fly-out.css');
+				$headBlock->addItem('skin_js','js/magebuzz/catsidebarnav/fly-out/hoverIntent.js');
+				$headBlock->addItem('skin_js','js/magebuzz/catsidebarnav/fly-out/superfish.js');
+				$headBlock->addItem('skin_js','js/magebuzz/catsidebarnav/fly-out/fly-out.js');
+				break;
+			default:
+				$headBlock->addCss('css/magebuzz/catsidebarnav/static.css');
+				break;
+		}
 		return parent::_prepareLayout();
-    }
-	public function getStoreCategories()
-    {
-        $helper = Mage::helper('catsidebarnav/category');
-        return $helper->getAllCategories();
-    }
-	protected function _renderCategoryMenuItemHtml($category, $level = 0, $isLast = false, $isFirst = false,
-        $isOutermost = false, $outermostItemClass = '', $childrenWrapClass = '', $noEventAttributes = false)
-    {
+	}
+	public function getStoreCategories() {
+		$helper = Mage::helper('catsidebarnav/category');
+		return $helper->getAllCategories();
+	}
+	protected function _renderCategoryMenuItemHtml($category, $level = 0, $isLast = false, $isFirst = false,$isOutermost = false, $outermostItemClass = '', $childrenWrapClass = '', $noEventAttributes = false) {
 		$showType=Mage::getStoreConfig('catsidebarnav/display_settings/show_type');
 		if (!$category->getIsActive()) {
 			return '';
@@ -133,5 +151,9 @@ class Magebuzz_Catsidebarnav_Block_Sidebar extends Magebuzz_Catsidebarnav_Block_
 
 		$html = implode("\n", $html);
 		return $html;
-    }
+  }
+	public function addCssJsHead() {
+		
+		return $this;
+	}
 }
