@@ -1,16 +1,19 @@
 {
-    "name": "OpenMageModuleFostering/magebuzz_category_sidebar_navigation",
+    "name": "OpenMageModuleFostering\/magebuzz_category_sidebar_navigation",
     "type": "magento-module",
     "license": "Open-Software-License",
     "homepage": "",
     "description": "Changing your website interface by moving the categories navigation to the left or right column.",
     "authors": [
-    {
-        "name": "Neo Nguyen",
-        "email": "magebuzz@gmail.com"
-    }
-],
+        {
+            "name": "Neo Nguyen",
+            "email": "magebuzz@gmail.com"
+        }
+    ],
     "suggest": {
-        "magento-hackathon/magento-composer-installer": "*"
-    }
+        "magento-hackathon\/magento-composer-installer": "*"
+    },
+    "keywords": [
+        "openmage-module"
+    ]
 }
